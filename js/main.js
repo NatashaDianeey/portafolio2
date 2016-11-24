@@ -219,15 +219,15 @@
 			var lineMaker = new LineMaker({
 					position: 'fixed',
 					lines: [        
-						{top: '10vh', left: 0, width: '100%', height: 1, color: '#7599E4', hidden: true, animation: { duration: 1000, easing: 'easeInOutSine', delay: 20, direction: 'LeftRight' }},
-						{top: '20vh', left: 0, width: '100%', height: 1, color: '#7599E4', hidden: true, animation: { duration: 1000, easing: 'easeInOutSine', delay: 40, direction: 'RightLeft' }},
-						{top: '30vh', left: 0, width: '100%', height: 1, color: '#7599E4', hidden: true, animation: { duration: 1000, easing: 'easeInOutSine', delay: 60, direction: 'LeftRight' }},
-						{top: '40vh', left: 0, width: '100%', height: 1, color: '#7599E4', hidden: true, animation: { duration: 1000, easing: 'easeInOutSine', delay: 80, direction: 'RightLeft' }},
-						{top: '50vh', left: 0, width: '100%', height: 1, color: '#7599E4', hidden: true, animation: { duration: 1000, easing: 'easeInOutSine', delay: 100, direction: 'LeftRight' }},
-						{top: '60vh', left: 0, width: '100%', height: 1, color: '#7599E4', hidden: true, animation: { duration: 1000, easing: 'easeInOutSine', delay: 120, direction: 'RightLeft' }},
-						{top: '70vh', left: 0, width: '100%', height: 1, color: '#7599E4', hidden: true, animation: { duration: 1000, easing: 'easeInOutSine', delay: 140, direction: 'LeftRight' }},
-						{top: '80vh', left: 0, width: '100%', height: 1, color: '#7599E4', hidden: true, animation: { duration: 1000, easing: 'easeInOutSine', delay: 160, direction: 'RightLeft' }},
-						{top: '90vh', left: 0, width: '100%', height: 1, color: '#7599E4', hidden: true, animation: { duration: 1000, easing: 'easeInOutSine', delay: 180, direction: 'LeftRight' }}
+						{top: '10vh', left: 0, width: '100%', height: 1, color: '#19b8af', hidden: true, animation: { duration: 2000, easing: 'easeInOutSine', delay: 20, direction: 'LeftRight' }},
+						{top: '20vh', left: 0, width: '100%', height: 1, color: '#19b8af', hidden: true, animation: { duration: 2000, easing: 'easeInOutSine', delay: 40, direction: 'RightLeft' }},
+						{top: '30vh', left: 0, width: '100%', height: 1, color: '#19b8af', hidden: true, animation: { duration: 2000, easing: 'easeInOutSine', delay: 60, direction: 'LeftRight' }},
+						{top: '40vh', left: 0, width: '100%', height: 1, color: '#19b8af', hidden: true, animation: { duration: 2000, easing: 'easeInOutSine', delay: 80, direction: 'RightLeft' }},
+						{top: '50vh', left: 0, width: '100%', height: 1, color: '#19b8af', hidden: true, animation: { duration: 2000, easing: 'easeInOutSine', delay: 100, direction: 'LeftRight' }},
+						{top: '60vh', left: 0, width: '100%', height: 1, color: '#19b8af', hidden: true, animation: { duration: 2000, easing: 'easeInOutSine', delay: 120, direction: 'RightLeft' }},
+						{top: '70vh', left: 0, width: '100%', height: 1, color: '#19b8af', hidden: true, animation: { duration: 2000, easing: 'easeInOutSine', delay: 140, direction: 'LeftRight' }},
+						{top: '80vh', left: 0, width: '100%', height: 1, color: '#19b8af', hidden: true, animation: { duration: 2000, easing: 'easeInOutSine', delay: 160, direction: 'RightLeft' }},
+						{top: '90vh', left: 0, width: '100%', height: 1, color: '#19b8af', hidden: true, animation: { duration: 2000, easing: 'easeInOutSine', delay: 180, direction: 'LeftRight' }}
 					]
 			});
 			
@@ -246,11 +246,40 @@ $(document).ready(function(){
     var lineas = $(".decolines").detach();
     $("#contenedorDeLineas").append(lineas);
     
-    jQuery('.skillbar').each(function(){
-		jQuery(this).find('.skillbar-bar').animate({
-			width:jQuery(this).attr('data-percent')
-		},6000);
+    jQuery("#habilidades").click(function(){
+        jQuery('.skillbar').each(function(){
+            jQuery(this).find('.skillbar-bar').animate({
+                width:jQuery(this).attr('data-percent')
+            },6000);
+        });
 	});
     
 });
 
+
+//funcion para el logo en el home 
+(function( $ ){
+
+    $(document).ready(function(){
+
+        var $logo = $('#logo');
+
+        /**
+         * Setup your Lazy Line element.
+         * see README file for more settings
+         */
+
+        $logo.lazylinepainter({
+            'svgData': svgData,
+            'strokeWidth': 7,
+            'strokeColor': '#b5287b',
+            'drawSequential': false,
+            'ease': 'easeInOutQuad'
+        });
+
+        setTimeout(function(){
+            $logo.lazylinepainter('paint');
+        }, 10)
+    })
+
+})( jQuery );
